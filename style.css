@@ -588,11 +588,46 @@ body {
 
 /* Responsive */
 @media (max-width: 480px) {
+    .app-container {
+        padding: 15px 10px;
+        /* Less padding on container */
+    }
+
     .glass-card {
-        padding: 20px;
+        padding: 20px 15px;
+        /* Less padding inside cards */
     }
 
     .intro-card h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        /* Slightly smaller title to fit */
+    }
+
+    .question-card h2 {
+        font-size: 1.1rem;
+        /* Adjust question text */
+        margin-bottom: 20px;
+    }
+
+    .option-btn {
+        padding: 14px;
+        font-size: 0.95rem;
+        /* Readable text size */
+    }
+
+    .btn {
+        padding: 12px 20px;
+        font-size: 0.95rem;
+    }
+
+    .controls {
+        flex-direction: column;
+        /* Stack buttons on very small screens if needed, or keep row but adjust gap */
+        gap: 10px;
+    }
+
+    .blob {
+        opacity: 0.4;
+        /* Fade blobs a bit more on mobile to reduce distraction */
     }
 }
