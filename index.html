@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GOSS Hazırlık</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <div class="app-container">
+        <!-- Start Screen -->
+        <div id="start-screen" class="screen active">
+            <div class="glass-card intro-card">
+                <h1>Gemi Adamı Sınavına Hazırlık</h1>
+                <p class="subtitle">Çalışmak istediğiniz sınavı seçiniz...</p>
+
+                <!-- Category Section -->
+                <div id="category-section" class="category-section">
+                    <!-- Buttons will be injected here by JS -->
+                </div>
+
+                <p id="status-msg" class="status-msg"></p>
+            </div>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div id="quiz-screen" class="screen">
+            <div class="quiz-header">
+                <div class="header-top">
+                    <button id="quit-btn" class="btn-text">← Çıkış / Bitir</button>
+                    <div class="stats">
+                        <span id="question-counter">Soru 1 / 10</span>
+                        <span id="score-display">Puan: 0</span>
+                    </div>
+                </div>
+                <!-- Info Bar for Shuffle Stats -->
+                <div id="quiz-info-bar" class="quiz-info-bar"></div>
+
+                <div class="progress-container">
+                    <div class="progress-bar" id="progress-bar"></div>
+                </div>
+            </div>
+
+            <div class="glass-card question-card">
+                <h2 id="question-text">Soru yükleniyor...</h2>
+                <div class="options-container" id="options-container">
+                    <!-- Options will be injected here -->
+                </div>
+
+                <!-- AI Explanation Section -->
+                <div id="ai-explanation-area" class="ai-explanation-area" style="display: none;">
+                    <div class="ai-header" style="justify-content: space-between;">
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <span class="ai-icon">✨</span>
+                            <strong>Açıklama</strong>
+                        </div>
+
+                    </div>
+                    <p id="ai-text">Açıklama yükleniyor...</p>
+
+                    <!-- Detailed Explain Trigger -->
+                    <div style="text-align: right;">
+                        <a href="#" id="detailed-explain-link"
+                            style="display:none; margin-top:10px; color:var(--primary); text-decoration:none; font-size:0.9rem; font-weight:600;">
+                            📖 Detaylı Açıklama
+                        </a>
+                    </div>
+
+                    <!-- Detailed Content Area -->
+                    <div id="ai-detailed-text"
+                        style="display:none; margin-top:15px; padding-top:15px; border-top:1px solid rgba(255,255,255,0.1); font-size:0.9rem;">
+                    </div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button id="prev-btn" class="btn btn-secondary" disabled>Önceki</button>
+                <button id="explain-btn" class="btn btn-magic" style="display: none;">✨ Neden?</button>
+                <button id="next-btn" class="btn btn-primary" style="display: none;">Sonraki Soru</button>
+                <button id="finish-btn" class="btn btn-danger" style="display: none;">Testi Bitir</button>
+            </div>
+        </div>
+
+        <!-- Result Screen -->
+        <div id="result-screen" class="screen">
+            <div class="glass-card result-card">
+                <h2>Test Tamamlandı!</h2>
+                <div class="score-circle">
+                    <span id="final-score">0</span>
+                    <span class="score-label">Puan</span>
+                </div>
+                <p id="result-message">Tebrikler!</p>
+                <div class="result-stats">
+                    <div class="stat-item">
+                        <span class="stat-val" id="total-questions">0</span>
+                        <span class="stat-label">Toplam</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-val" id="correct-count">0</span>
+                        <span class="stat-label">Doğru</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-val" id="wrong-count">0</span>
+                        <span class="stat-label">Yanlış</span>
+                    </div>
+                </div>
+                <button id="restart-btn" class="btn btn-primary">Yeni Test</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js?v=11"></script>
+</body>
+
+</html>
