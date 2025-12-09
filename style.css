@@ -586,48 +586,74 @@ body {
     color: var(--text-muted);
 }
 
-/* Responsive */
-@media (max-width: 480px) {
+/* Responsive - Aggressive Mobile Fix */
+@media (max-width: 600px) {
+
+    /* Increased breakpoint to catch larger phones */
+    body {
+        align-items: flex-start;
+        /* Align to top on mobile */
+        padding: 0;
+        overflow-y: auto;
+        /* Ensure scrolling works */
+    }
+
     .app-container {
         padding: 15px 10px;
-        /* Less padding on container */
+        max-width: 100%;
+        min-height: 100vh;
+        /* Fill screen */
+        justify-content: flex-start;
+        /* Start content from top */
     }
 
     .glass-card {
         padding: 20px 15px;
-        /* Less padding inside cards */
-    }
-
-    .intro-card h1 {
-        font-size: 1.8rem;
-        /* Slightly smaller title to fit */
-    }
-
-    .question-card h2 {
-        font-size: 1.1rem;
-        /* Adjust question text */
+        border-radius: 16px;
+        /* Slightly less rounded */
         margin-bottom: 20px;
     }
 
+    .intro-card h1 {
+        font-size: 2rem;
+        /* Keep title big */
+        line-height: 1.2;
+    }
+
+    .question-card {
+        min-height: auto;
+        /* Let it grow naturally */
+    }
+
+    .question-card h2 {
+        font-size: 1.25rem;
+        /* Larger question text */
+        line-height: 1.4;
+        font-weight: 600;
+    }
+
     .option-btn {
-        padding: 14px;
-        font-size: 0.95rem;
-        /* Readable text size */
+        padding: 18px 15px;
+        /* Larger hit area */
+        font-size: 1.1rem;
+        /* Larger text */
+        line-height: 1.4;
     }
 
     .btn {
-        padding: 12px 20px;
-        font-size: 0.95rem;
+        padding: 16px;
+        font-size: 1.1rem;
+        /* Larger buttons */
     }
 
     .controls {
         flex-direction: column;
-        /* Stack buttons on very small screens if needed, or keep row but adjust gap */
-        gap: 10px;
+        gap: 12px;
+        margin-bottom: 40px;
+        /* Spacer at bottom */
     }
 
     .blob {
-        opacity: 0.4;
-        /* Fade blobs a bit more on mobile to reduce distraction */
+        opacity: 0.3;
     }
 }
